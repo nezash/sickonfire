@@ -1,0 +1,66 @@
+/* ===== BADGE "EN VIVO" REAL (consulta al Worker de Cloudflare) =====
+   Vive en el navbar, junto al logo. Chico a propósito. */
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: var(--cream);
+  border: 1.5px solid var(--pink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--plum);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.live-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #999;
+  flex-shrink: 0;
+}
+
+/* ---- Estado: en vivo ---- */
+.live-status.is-live {
+  background: #FFE1EC;
+  border-color: var(--pink-hot);
+  color: var(--pink-hot);
+}
+
+.live-status.is-live .live-status-dot {
+  background: #FF2D55;
+  animation: liveDotPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes liveDotPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 45, 85, 0.6); }
+  50% { box-shadow: 0 0 0 5px rgba(255, 45, 85, 0); }
+}
+
+/* ---- Estado: offline ---- */
+.live-status.is-offline .live-status-dot {
+  background: #999;
+}
+
+@media (max-width: 720px) {
+  .live-status {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-status.is-live .live-status-dot {
+    animation: none;
+  }
+}

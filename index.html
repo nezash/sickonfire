@@ -4,6 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SickonFire</title>
+<meta name="description" content="SickonFire — streamer peruana, gamer y comunicadora. Stream en vivo, clips, galería y más.">
+<link rel="canonical" href="https://nezash.github.io/sickonfire/">
+
+<!-- Open Graph / redes sociales -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nezash.github.io/sickonfire/">
+<meta property="og:title" content="SickonFire">
+<meta property="og:description" content="Streamer peruana, gamer y comunicadora. Full League of Legends, mis días y un té calientito. Únete a la fam 🧸">
+<meta property="og:image" content="https://nezash.github.io/sickonfire/images/icon.png">
+
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SickonFire">
+<meta name="twitter:description" content="Streamer peruana, gamer y comunicadora. Full League of Legends, mis días y un té calientito. Únete a la fam 🧸">
+<meta name="twitter:image" content="https://nezash.github.io/sickonfire/images/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Rubik:wght@400;500;600;700&family=Varela+Round&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
@@ -13,7 +28,10 @@
 <link rel="stylesheet" href="css/day-night-schedule.css">
 <link rel="stylesheet" href="css/easter-egg.css">
 <link rel="stylesheet" href="css/cursor-custom.css">
+<link rel="stylesheet" href="css/live-badge.css">
 <link rel="icon" type="image/png" href="images/rosquilla.png">
+<script data-goatcounter="https://nezash.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 
@@ -33,7 +51,13 @@
 
 <!-- NAV -->
 <nav class="navbar">
-  <span class="nav-logo">SickonFire</span>
+  <div class="nav-brand">
+    <span class="nav-logo">SickonFire</span>
+    <div class="live-status" id="liveStatus">
+      <span class="live-status-dot"></span>
+      <span class="live-status-text">...</span>
+    </div>
+  </div>
   <div class="nav-links">
     <a href="#sobre">Sobre mí</a>
     <a href="#eventos">Eventos</a>
@@ -67,7 +91,7 @@
 <!-- SOBRE MI -->
 <section class="section about" id="sobre">
   <div class="about-img-wrap">
-    <img src="images/sobre.png" alt="SickonFire ilustración completa" class="about-img">
+    <img src="images/sobre.png" alt="SickonFire ilustración completa" class="about-img" loading="lazy">
   </div>
   <div class="about-text">
     <p class="section-eyebrow">Sobre mí</p>
@@ -83,7 +107,7 @@
     <p class="section-eyebrow center">Evento especial</p>
     <h2 class="section-title center">Estás invitado al Sickxtensible</h2>
     <div class="event-flyer">
-      <img src="images/evento-sickxtensible.jpg" alt="Flyer del evento Sickxtensible">
+      <img src="images/evento-sickxtensible.jpg" alt="Flyer del evento Sickxtensible" loading="lazy">
     </div>
     <div class="event-info">
       <p class="event-date">📅 Viernes 3 de julio · 8:00 PM hora Perú</p>
@@ -207,5 +231,6 @@
 <script src="js/typing-effect.js"></script>
 <script src="js/tilt-effect.js"></script>
 <script src="js/easter-egg.js"></script>
+<script src="js/live-badge.js"></script>
 </body>
 </html>

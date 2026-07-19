@@ -6,10 +6,10 @@ const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
 const floatItems = document.querySelectorAll('.float-item');
 
 floatItems.forEach(item => {
-  const left = Math.random() * 96;                 // posición horizontal 0-96%
-  const delay = Math.random() * 10;                 // arranca en un momento distinto
-  const duration = 10 + Math.random() * 10;         // dura entre 10 y 20s
-  const size = 1.1 + Math.random() * 1.3;           // tamaño entre 1.1rem y 2.4rem
+  const left = Math.random() * 96;
+  const delay = Math.random() * 10;
+  const duration = 10 + Math.random() * 10;
+  const size = 1.1 + Math.random() * 1.3;
 
   item.style.left = `${left}%`;
   item.style.animationDelay = `${delay}s`;
@@ -47,19 +47,10 @@ if (hasFinePointer && trail) {
     }
   });
 
-  // el punto base original no lo necesitamos visible
   trail.style.display = 'none';
 }
 
 // ===== Clips de Kick =====
-// Kick todavía no tiene un embed público oficial de clips individuales
-// (sí tiene embed oficial del stream en vivo, que ya está arriba).
-// Por eso los clips se manejan como una lista editable a mano:
-// agrega/quita objetos aquí cada vez que tengas un clip nuevo que destacar.
-// - title: el nombre del clip
-// - url: el link directo al clip en Kick (kick.com/sickonfire/clips/CLIP-ID)
-// - thumbnail: (opcional) URL de una imagen de portada. Si la dejas vacía,
-//   se muestra un fondo rosa liso en su lugar.
 const CLIPS = [
   {
     title: 'Como sick?',
@@ -88,7 +79,7 @@ if (clipsGrid) {
     card.rel = 'noopener';
 
     const thumbHtml = clip.thumbnail
-      ? `<img src="${clip.thumbnail}" alt="${clip.title}">`
+      ? `<img src="${clip.thumbnail}" alt="${clip.title}" loading="lazy">`
       : '';
 
     card.innerHTML = `
@@ -106,8 +97,6 @@ if (clipsGrid) {
 }
 
 // ===== Galería (versión chibi) =====
-// Para agregar más imágenes, solo suma otro objeto aquí abajo.
-// El archivo debe existir en la carpeta versiones/ con ese nombre exacto.
 const GALLERY_IMAGES = [
   { src: 'versiones/1.png', alt: 'SickonFire versión chibi 1' },
   { src: 'versiones/2.png', alt: 'SickonFire versión chibi 2' },
@@ -124,7 +113,7 @@ if (galleryGrid && fanartCard) {
     const figure = document.createElement('figure');
     figure.className = 'gallery-item is-clickable';
     figure.innerHTML = `
-      <img src="${item.src}" alt="${item.alt}">
+      <img src="${item.src}" alt="${item.alt}" loading="lazy">
       <div class="gallery-hint">🔍</div>
     `;
     figure.addEventListener('click', () => openLightbox(index));
@@ -176,12 +165,10 @@ if (lightbox) {
   lightboxNext.addEventListener('click', showNext);
   lightboxPrev.addEventListener('click', showPrev);
 
-  // cerrar al hacer click fuera de la imagen
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
   });
 
-  // navegación con teclado
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('is-open')) return;
     if (e.key === 'Escape') closeLightbox();
@@ -189,7 +176,6 @@ if (lightbox) {
     if (e.key === 'ArrowLeft') showPrev();
   });
 
-  // swipe en touch (izquierda/derecha)
   let touchStartX = 0;
   lightbox.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].clientX;
