@@ -1,0 +1,21 @@
+/* ===== ACCESIBILIDAD: SALTAR AL CONTENIDO =====
+   Invisible hasta que alguien navega con teclado (Tab) y lo enfoca.
+   No afecta a nadie navegando con mouse/touch. */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10000;
+  background: var(--pink-hot);
+  color: var(--white);
+  padding: 0.85rem 1.4rem;
+  border-radius: 0 0 12px 0;
+  font-weight: 700;
+  font-family: var(--font-body);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0;
+}

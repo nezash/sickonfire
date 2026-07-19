@@ -112,11 +112,20 @@ if (galleryGrid && fanartCard) {
   GALLERY_IMAGES.forEach((item, index) => {
     const figure = document.createElement('figure');
     figure.className = 'gallery-item is-clickable';
+    figure.setAttribute('tabindex', '0');
+    figure.setAttribute('role', 'button');
+    figure.setAttribute('aria-label', `Ver ${item.alt} en grande`);
     figure.innerHTML = `
       <img src="${item.src}" alt="${item.alt}" loading="lazy">
       <div class="gallery-hint">🔍</div>
     `;
     figure.addEventListener('click', () => openLightbox(index));
+    figure.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(index);
+      }
+    });
     galleryGrid.insertBefore(figure, fanartCard);
   });
 }

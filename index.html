@@ -29,11 +29,32 @@
 <link rel="stylesheet" href="css/easter-egg.css">
 <link rel="stylesheet" href="css/cursor-custom.css">
 <link rel="stylesheet" href="css/live-badge.css">
+<link rel="stylesheet" href="css/accessibility.css">
 <link rel="icon" type="image/png" href="images/rosquilla.png">
 <script data-goatcounter="https://nezash.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+
+<!-- Datos estructurados para buscadores (Google, etc.) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "SickonFire",
+  "url": "https://nezash.github.io/sickonfire/",
+  "image": "https://nezash.github.io/sickonfire/images/icon.png",
+  "description": "Streamer peruana, gamer y comunicadora. Full League of Legends, día a día y té calientito.",
+  "sameAs": [
+    "https://www.instagram.com/sickonfxre",
+    "https://kick.com/sickonfire",
+    "https://www.tiktok.com/@sickonfire",
+    "https://x.com/sickonfirex"
+  ]
+}
+</script>
 </head>
 <body>
+
+<a href="#inicio" class="skip-link">Saltar al contenido</a>
 
 <div class="cursor-trail" id="cursorTrail"></div>
 
@@ -53,7 +74,7 @@
 <nav class="navbar">
   <div class="nav-brand">
     <span class="nav-logo">SickonFire</span>
-    <div class="live-status" id="liveStatus">
+    <div class="live-status" id="liveStatus" aria-live="polite" aria-atomic="true">
       <span class="live-status-dot"></span>
       <span class="live-status-text">...</span>
     </div>
@@ -69,7 +90,7 @@
 </nav>
 
 <!-- HERO -->
-<header class="hero" id="inicio">
+<header class="hero" id="inicio" tabindex="-1">
   <div class="hero-content">
     <p class="eyebrow">🇵🇪 Streamer · Comunicadora · Gamer</p>
     <h1 class="hero-title">Sick<span class="accent">on</span>Fire</h1>
