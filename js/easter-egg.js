@@ -51,7 +51,16 @@
     }, DURATION_MS);
   }
 
-  heroImg.style.cursor = 'pointer';
+  function playBoink() {
+    if (prefersReducedMotion) return;
+    heroImg.classList.remove('is-boink');
+    void heroImg.offsetWidth; // reinicia la animación si se clickea rápido varias veces
+    heroImg.classList.add('is-boink');
+  }
+
+  heroImg.addEventListener('animationend', (e) => {
+    if (e.animationName === 'boinkPop') heroImg.classList.remove('is-boink');
+  });
 
   heroImg.addEventListener('click', () => {
     if (isPlaying) return;
@@ -59,6 +68,8 @@
     if (clickCount >= CLICKS_NEEDED) {
       clickCount = 0;
       triggerAngry();
+    } else {
+      playBoink();
     }
   });
 })();

@@ -1,0 +1,27 @@
+/* ===== CURSOR PERSONALIZADO (DONA) =====
+   Cursor normal: dona rosa con chispitas — cursor/cursor-donut.png
+   Cursor sobre elementos clickeables: dona mordida — cursor/cursor-donut-bite.png
+   Imágenes generadas por IA, recortadas y reducidas a 32×32px.
+   El hotspot (punto exacto que "apunta") queda en el centro (16 16). */
+
+body {
+  cursor: url('../cursor/cursor-donut.png') 16 16, auto;
+}
+
+a,
+button,
+.btn,
+.nav-links a,
+.gallery-item.is-clickable,
+.clip-card,
+.schedule-card,
+.lightbox-nav,
+.lightbox-close,
+.scroll-cue,
+#heroImg {
+  cursor: url('../cursor/cursor-donut-bite.png') 16 16, pointer;
+}
+
+.btn-kofi[disabled] {
+  cursor: not-allowed;
+}
