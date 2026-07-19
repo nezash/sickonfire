@@ -1,0 +1,16 @@
+/* ===== TRANSICIÓN DE COLOR DE FONDO ENTRE SECCIONES =====
+   El color se calcula y aplica en tiempo real desde
+   js/bg-transition.js según la posición de scroll.
+   Este archivo solo declara los tonos derivados que usa ese script. */
+
+:root {
+  --bg-pink-tint: #FFE9F3;
+  --bg-lilac-tint: #EFEAFB;
+}
+
+/* Evita parpadeo/salto: la transición real la hace JS por frame,
+   pero dejamos un fallback suave por si el navegador tarda en aplicar
+   el primer cálculo. */
+body {
+  transition: background-color 0.05s linear;
+}

@@ -1,0 +1,88 @@
+/* ===== MODO DÍA/NOCHE EN HORARIO =====
+   La tarjeta de día se queda clara (hereda el estilo base de
+   .schedule-card en style.css). La tarjeta de noche se oscurece
+   y suma estrellitas parpadeando, usando el lila de la paleta. */
+
+.schedule-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.schedule-icon {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
+}
+
+/* ---- Bloque día ---- */
+.schedule-card-day {
+  background: var(--white);
+}
+
+/* ---- Bloque noche ---- */
+.schedule-card-night {
+  background: linear-gradient(160deg, var(--plum) 0%, #2E1230 100%);
+  border-color: var(--lilac);
+}
+
+.schedule-card-night:hover {
+  border-color: var(--pink-candy);
+}
+
+.schedule-card-night .schedule-time {
+  color: var(--lilac);
+}
+
+.schedule-card-night .schedule-time span {
+  color: var(--lilac);
+  opacity: 0.75;
+}
+
+.schedule-card-night .schedule-tag {
+  color: var(--white);
+  opacity: 0.85;
+}
+
+/* ---- Estrellitas parpadeando (solo en la tarjeta de noche) ---- */
+.schedule-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.schedule-stars span {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--white);
+  animation: starTwinkle 2.4s ease-in-out infinite;
+}
+
+.schedule-stars span:nth-child(1) { top: 15%; left: 12%; animation-delay: 0s; }
+.schedule-stars span:nth-child(2) { top: 30%; left: 82%; animation-delay: 0.4s; }
+.schedule-stars span:nth-child(3) { top: 65%; left: 20%; animation-delay: 0.8s; }
+.schedule-stars span:nth-child(4) { top: 78%; left: 70%; animation-delay: 1.2s; }
+.schedule-stars span:nth-child(5) { top: 12%; left: 55%; animation-delay: 1.6s; }
+.schedule-stars span:nth-child(6) { top: 50%; left: 92%; animation-delay: 2s; }
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.6); }
+}
+
+/* Que el ícono y el texto queden por encima de las estrellitas */
+.schedule-card-night .schedule-icon,
+.schedule-card-night .schedule-time,
+.schedule-card-night .schedule-tag {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .schedule-stars span {
+    animation: none;
+    opacity: 0.5;
+  }
+}

@@ -10,7 +10,8 @@
   --white: #FFFFFF;
 
   --font-display: 'Fredoka', system-ui, sans-serif;
-  --font-body: 'Quicksand', system-ui, sans-serif;
+  --font-body: 'Rubik', system-ui, sans-serif;
+  --font-hero: 'Varela Round', system-ui, sans-serif;
   --font-mono: 'Space Mono', monospace;
 }
 
@@ -57,9 +58,9 @@ img { max-width: 100%; display: block; }
 }
 
 @keyframes floatUp {
-  0%   { transform: translateY(110vh) rotate(0deg); opacity: 0; }
-  10%  { opacity: 0.35; }
-  90%  { opacity: 0.35; }
+  0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.35; }
+  90% { opacity: 0.35; }
   100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
 }
 
@@ -167,6 +168,7 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-tagline {
+  font-family: var(--font-hero);
   font-size: 1.15rem;
   font-weight: 500;
   line-height: 1.5;

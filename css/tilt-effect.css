@@ -1,0 +1,19 @@
+/* ===== HOVER 3D / TILT SUTIL EN TARJETAS =====
+   La rotación real se calcula en tiempo real en js/tilt-effect.js
+   según la posición del mouse. Este archivo solo ajusta la transición
+   para que el movimiento se sienta suave (reemplaza la duración de
+   transform que ya tenían estas tarjetas en style.css, sin tocarlo). */
+
+.gallery-item,
+.clip-card,
+.schedule-card {
+  transition: transform 0.15s ease-out, border-color 0.25s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item,
+  .clip-card,
+  .schedule-card {
+    transition: border-color 0.25s ease;
+  }
+}

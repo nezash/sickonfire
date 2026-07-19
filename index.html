@@ -5,8 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SickonFire</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Rubik:wght@400;500;600;700&family=Varela+Round&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bg-transition.css">
+<link rel="stylesheet" href="css/typing-effect.css">
+<link rel="stylesheet" href="css/tilt-effect.css">
+<link rel="stylesheet" href="css/day-night-schedule.css">
+<link rel="stylesheet" href="css/easter-egg.css">
 <link rel="icon" type="image/png" href="images/rosquilla.png">
 </head>
 <body>
@@ -44,7 +49,6 @@
     <p class="eyebrow">🇵🇪 Streamer · Comunicadora · Gamer</p>
     <h1 class="hero-title">Sick<span class="accent">on</span>Fire</h1>
     <p class="hero-tagline">Soy Sick, gamer y streamer. Juego, hablo de mi día a día y cierro la noche con un té. Aquí te espero.</p>
-
     <div class="hero-actions">
       <a href="https://www.instagram.com/sickonfxre" class="btn btn-instagram" target="_blank" rel="noopener">Instagram</a>
       <a href="https://kick.com/sickonfire" class="btn btn-kick" target="_blank" rel="noopener">Kick</a>
@@ -52,12 +56,10 @@
       <a href="https://x.com/sickonfirex" class="btn btn-twitter" target="_blank" rel="noopener">Twitter/X</a>
     </div>
   </div>
-
   <div class="hero-visual">
     <div class="hero-glow"></div>
-    <img src="images/icon.png" alt="SickonFire versión chibi" class="hero-img">
+    <img src="images/icon.png" alt="SickonFire versión chibi" class="hero-img" id="heroImg">
   </div>
-
   <a href="#sobre" class="scroll-cue" aria-label="Bajar">↓</a>
 </header>
 
@@ -79,17 +81,13 @@
   <div class="event-card">
     <p class="section-eyebrow center">Evento especial</p>
     <h2 class="section-title center">Estás invitado al Sickxtensible</h2>
-
     <div class="event-flyer">
       <img src="images/evento-sickxtensible.jpg" alt="Flyer del evento Sickxtensible">
     </div>
-
     <div class="event-info">
       <p class="event-date">📅 Viernes 3 de julio · 8:00 PM hora Perú</p>
-
       <p>Un extensible con variedad de juegos, dinámicas, bromas, karaoke y posiblemente funas. Lo recaudado va directo a apoyar mis grabaciones de la universidad.</p>
       <p>Anímate a llenarlo de papelitos, hacerme cantar cualquier canción, ponerme gorros divertidos, cambiarme de vtuber y hasta dejarme calva.</p>
-
       <div class="event-rules">
         <div class="event-rule">
           <span class="event-rule-platform">TikTok</span>
@@ -113,13 +111,17 @@
   <p class="section-eyebrow center">Horario</p>
   <h2 class="section-title center">Stream (casi) todos los días</h2>
   <p class="schedule-note">Dos bloques fijos, la mayoría de los días de la semana. Si algún día se cae uno (o los dos), es por cosas de la vida real — pero la base es esta.</p>
-
   <div class="schedule-cards">
-    <div class="schedule-card">
+    <div class="schedule-card schedule-card-day">
+      <span class="schedule-icon" aria-hidden="true">☀️</span>
       <p class="schedule-time">11:00 <span>AM</span> — 1:00 <span>PM</span></p>
       <p class="schedule-tag">Bloque día</p>
     </div>
-    <div class="schedule-card">
+    <div class="schedule-card schedule-card-night">
+      <div class="schedule-stars" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <span class="schedule-icon" aria-hidden="true">🌙</span>
       <p class="schedule-time">8:00 <span>PM</span> — 10:00 <span>PM</span></p>
       <p class="schedule-tag">Bloque noche</p>
     </div>
@@ -147,11 +149,9 @@
   <p class="section-eyebrow center">Clips</p>
   <h2 class="section-title center">Los mejores momentos</h2>
   <p class="clips-note">Una selección de mis clips más chistosos y épicos de Kick. Se actualiza seguido.</p>
-
   <div class="clips-grid" id="clipsGrid">
     <!-- Las tarjetas de clips se generan desde js/script.js (array CLIPS) -->
   </div>
-
   <a href="https://kick.com/sickonfire/clips" class="btn btn-kick clips-cta" target="_blank" rel="noopener">Ver todos los clips en Kick</a>
 </section>
 
@@ -159,7 +159,6 @@
 <section class="section gallery" id="galeria">
   <p class="section-eyebrow center">Galería</p>
   <h2 class="section-title center">Mis versiones</h2>
-
   <div class="gallery-grid" id="galleryGrid">
     <figure class="gallery-item gallery-soon" id="fanartCard">
       <div class="soon-inner">
@@ -203,5 +202,9 @@
 </footer>
 
 <script src="js/script.js"></script>
+<script src="js/bg-transition.js"></script>
+<script src="js/typing-effect.js"></script>
+<script src="js/tilt-effect.js"></script>
+<script src="js/easter-egg.js"></script>
 </body>
 </html>

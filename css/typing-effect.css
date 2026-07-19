@@ -1,0 +1,23 @@
+/* ===== EFECTO DE ESCRITURA EN EL TAGLINE DEL HERO =====
+   La tipografía del tagline vive en style.css (--font-hero).
+   Este archivo solo maneja el cursor parpadeante mientras escribe. */
+
+.hero-tagline.typing-tagline.is-typing::after {
+  content: '|';
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--pink-hot);
+  animation: typingCursorBlink 0.8s steps(1) infinite;
+}
+
+@keyframes typingCursorBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-tagline.typing-tagline.is-typing::after {
+    animation: none;
+    opacity: 0;
+  }
+}
