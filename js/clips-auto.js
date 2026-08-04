@@ -4,7 +4,7 @@
 // desde Kick, y arma las tarjetas dinámicamente.
 
 (function () {
-  const WORKER_URL = 'https://kick-recent-clips.jmog1509.workers.dev/';
+  const WORKER_URL = 'https://kick-recent-clips.josemanuelosores.workers.dev/';
 
   const clipsGrid = document.getElementById('clipsGrid');
   if (!clipsGrid) return;
